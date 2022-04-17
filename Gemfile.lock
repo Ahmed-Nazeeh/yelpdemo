@@ -246,6 +246,7 @@ DEPENDENCIES
   figaro
   fog-aws
   jbuilder (~> 2.7)
+  mini_magick
   pg (~> 1.2.3)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
