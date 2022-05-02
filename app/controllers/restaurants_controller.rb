@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1 or /restaurants/1.json
   def show
     @reviews = Review.where(restaurant_id: @restaurant.id).order("created_at DESC")
+    # @review_user = User.find(review.user_id)
     if @reviews.blank?
       @avg_rating = 0
     else
