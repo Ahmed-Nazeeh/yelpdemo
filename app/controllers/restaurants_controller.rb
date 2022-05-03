@@ -74,8 +74,8 @@ class RestaurantsController < ApplicationController
 
     def check_user 
       unless current_user.admin?
-      end
         redirect_to root_url, alert: "Sorry, Only admins can do that!"
+      end
     end
     # Only allow a list of trusted parameters through.
     def restaurant_params
