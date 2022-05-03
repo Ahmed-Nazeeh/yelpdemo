@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show] 
+  before_action :check_user, except: [:index, :show]
 
   # GET /restaurants or /restaurants.json
   def index
@@ -70,6 +72,11 @@ class RestaurantsController < ApplicationController
       @restaurant = Restaurant.find(params[:id])
     end
 
+    def check_user 
+      unless current_user.admin?
+      end
+        redirect_to root_url, alert: "Sorry, Only admins can do that!"
+    end
     # Only allow a list of trusted parameters through.
     def restaurant_params
       params.require(:restaurant).permit(:name, :address, :phone, :website, :image)
