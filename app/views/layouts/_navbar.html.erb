@@ -17,12 +17,13 @@
               <%= link_to "Contact", pages_contact_path, class: "nav-link" %>
             </li>
           </ul>
-          <form class="form-inline col-lg-6 mx-lg-auto order-lg-middle mb-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
 
-       
+          <%= form_tag search_restaurants_path, method: :get, class: "form-inline col-lg-6 mx-lg-auto order-lg-middle mb-0" do %>
+            <p>
+              <%= text_field_tag :search, params[:search], class: "form-control mr-sm-2", placeholder: "Search" %>
+              <%= submit_tag "Search", name: nil, class: "btn btn-light my-2 my-sm-0" %>
+            </p>
+          <% end %>
 
           <ul class="navbar-nav">
           <% if user_signed_in? %>

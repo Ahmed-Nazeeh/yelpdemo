@@ -30,6 +30,9 @@ gem "fog-aws"
 gem "figaro"
 gem "mini_magick"
 gem 'devise'
+gem "searchkick"
+gem "elasticsearch", "< 7.14"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
